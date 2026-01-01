@@ -33,6 +33,6 @@ It supports secure account management, transaction tracking, and profile updates
 ---
 
 # Technology Stack
-| Backend | Spring Boot (Java) |
-| Frontend | HTML, CSS |
-| Database | MySQL |
+| Backend : Spring Boot (Java) |
+| Frontend : HTML, CSS |
+| Database : MySQL |
