@@ -70,15 +70,18 @@ public class UserController {
     {
         User user = userRepo.findById(obj.getId())
                 .orElseThrow(()->new RuntimeException("Not found"));
+        History h2 = new History();
         if(obj.getKey().equalsIgnoreCase("name"))
         {
             if(user.getName().equals(obj.getValue())) return "Cannot Be Same";
             user.setName(obj.getValue());
+            h2.setDescription("User "+user.getUsername()+"changed name to "+obj.getValue());
         }
         else if(obj.getKey().equalsIgnoreCase("password"))
         {
             if(user.getPassword().equals(obj.getValue())) return "Cannot Be Same";
             user.setPassword(obj.getValue());
+            h2.setDescription("User "+user.getUsername()+"changed password to "+obj.getValue());
         }
         else if(obj.getKey().equalsIgnoreCase("email"))
         {
@@ -86,11 +89,13 @@ public class UserController {
             User user2 = userRepo.findByEmail(obj.getValue());
             if(user2 != null) return "Email Already Exists";
             user.setEmail(obj.getValue());
+            h2.setDescription("User "+user.getUsername()+"changed email to "+obj.getValue());
         }
         else
         {
             return "Invalid Key";
         }
+        historyRepo.save(h2);
         userRepo.save(user);
         return "Updated Successfully";
     }
