@@ -11,14 +11,14 @@ It supports secure account management, transaction tracking, and profile updates
 
 ---
 
-## Features
+# Features
 
 #Authentication & User Management
 - User **Signup** and **Login**
 - Secure authentication handling
 - Profile update functionality (Name, Email, Password)
 
-# Customer Dashboard
+#Customer Dashboard
 - View account details
 - Deposit money
 - Withdraw money
@@ -29,14 +29,6 @@ It supports secure account management, transaction tracking, and profile updates
 - Separate admin access
 - View and manage customer accounts
 - Monitor all transactions
-
-#Data Persistence
-- MySQL database integration
-- Reliable transaction storage and retrieval
-
-# Frontend
-- Responsive UI built using **HTML** and **CSS**
-- Seamless integration with Spring Boot backend
 
 ---
 
